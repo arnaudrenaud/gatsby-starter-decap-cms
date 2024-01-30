@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
+import { Link, Script, graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
@@ -22,6 +22,7 @@ export const IndexPageTemplate = ({
 
   return (
     <div>
+      <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
       <FullWidthImage img={heroImage} title={title} subheading={subheading} />
       <section className="section section--gradient">
         <div className="container">
