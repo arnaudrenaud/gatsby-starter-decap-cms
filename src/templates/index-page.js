@@ -12,6 +12,7 @@ import FullWidthImage from "../components/FullWidthImage";
 export const IndexPageTemplate = ({
   image,
   title,
+  bistitle,
   heading,
   subheading,
   mainpitch,
@@ -24,6 +25,7 @@ export const IndexPageTemplate = ({
     <div>
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
       <FullWidthImage img={heroImage} title={title} subheading={subheading} />
+      <h1 className="title">{bistitle}</h1>
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
@@ -78,6 +80,7 @@ export const IndexPageTemplate = ({
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
+  bistitle: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
   mainpitch: PropTypes.object,
@@ -127,6 +130,7 @@ export const pageQuery = graphql`
         }
         heading
         subheading
+        bistitle
         mainpitch {
           title
           description
